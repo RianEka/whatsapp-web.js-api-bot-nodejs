@@ -212,26 +212,26 @@ if (msg.body.startsWith('!subject ')) {
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const xhr = new XMLHttpRequest();
 
-// configure a `POST` request
-xhr.open('POST', 'http://your-domain/php/echo.php');
+        // configure a `POST` request
+    xhr.open('POST', 'http://your-domain/php/echo.php');
 
-var froms = msg.from;   
+    var froms = msg.from;   
     
-let from =  froms.split("@", 1);
+    let from =  froms.split("@", 1);
     
-let params = 'nomor='+from+'&msg='+msg.body;
+    let params = 'nomor='+from+'&msg='+msg.body;
 
-// set `Content-Type` header
-xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        // set `Content-Type` header
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-// pass `params` to `send()` method
-xhr.send(params);
+       // pass `params` to `send()` method
+    xhr.send(params);
 
-// listen for `load` event
-xhr.onload = () => {
+      // listen for `load` event
+    xhr.onload = () => {
         // parse JSON
         client.sendMessage(msg.from, xhr.responseText);
-}
+       }
     }
 });
 client.on('message_create', (msg) => {
